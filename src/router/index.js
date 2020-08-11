@@ -8,15 +8,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import Drawer from './views/Drawer';
-import Home from './views/Home';
-import First from './views/First';
-import Second from './views/Second';
+import Drawer from '../views/Drawer';
+import Home from '../views/Home';
+import First from '../views/First';
+import Second from '../views/Second';
 
 const MainNavigator = createStackNavigator();
 
 
 const Tab = createBottomTabNavigator();
+
 
 function mainTab() {
     return (
@@ -30,8 +31,9 @@ function mainTab() {
                 component={First}
                 options={{
                     tabBarLabel: '首页',
-                    tabBarIcon:({focused})=>{
-                        return <Image style={{width:20,height:20}} source={focused?require('./images/tab/home_jy.png'):require('./images/tab/home_xx.png')}/>
+                    tabBarIcon: ({focused}) => {
+                        return <Image style={{width: 20, height: 20}}
+                                      source={focused ? require('../images/tab/home_jy.png') : require('../images/tab/home_xx.png')}/>
                     }
                 }}
             />
@@ -40,8 +42,9 @@ function mainTab() {
                 component={Second}
                 options={{
                     tabBarLabel: '学习',
-                    tabBarIcon:({focused})=>{
-                        return <Image style={{width:20,height:20}} source={focused?require('./images/tab/lean_jy.png'):require('./images/tab/lean_xx.png')}/>
+                    tabBarIcon: ({focused}) => {
+                        return <Image style={{width: 20, height: 20}}
+                                      source={focused ? require('../images/tab/lean_jy.png') : require('../images/tab/lean_xx.png')}/>
                     }
                 }}
             />
@@ -50,8 +53,9 @@ function mainTab() {
                 component={Second}
                 options={{
                     tabBarLabel: '我的',
-                    tabBarIcon:({focused})=>{
-                        return <Image style={{width:20,height:20}} source={focused?require('./images/tab/wd-jy.png'):require('./images/tab/wd-xx.png')}/>
+                    tabBarIcon: ({focused}) => {
+                        return <Image style={{width: 20, height: 20}}
+                                      source={focused ? require('../images/tab/wd-jy.png') : require('../images/tab/wd-xx.png')}/>
                     }
                 }}
             />
